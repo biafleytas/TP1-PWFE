@@ -4,12 +4,16 @@
 
 <p>sub-categoria-agregar works!</p>
 
-<div>
-  Descripcion <input  [(ngModel)]="subcategoria.descripcion">
-  <br>
-  Categoria <input  [(ngModel)]="subcategoria.idCategoria.idCategoria">
-  <br>
-  <button  (click)="guardar()">Guardar</button>
-  <br/>
-  {{mensaje}}
+<div class="col-md-5">
+  <div class="card-body">
+    <div class="container">
+      Descripcion <input  [(ngModel)]="subcategoria.descripcion">
+      <br>
+      Categoria <input  [(ngModel)]="subcategoria.idCategoria.idCategoria">
+      <br>
+      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+      <br/>
+    </div>
+    {{mensaje}}
+  </div>
 </div>

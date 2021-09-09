@@ -1,23 +1,31 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
 <p>paciente-agregar works!</p>
 
-<div>
-  Nombre <input  [(ngModel)]="paciente.nombre">
-  <br>
-  Apellido <input  [(ngModel)]="paciente.apellido">
-  <br>
-  E-mail <input  [(ngModel)]="paciente.email">
-  <br>
-  Telefono <input  [(ngModel)]="paciente.telefono">
-  <br>
-  RUC <input  [(ngModel)]="paciente.ruc">
-  <br>
-  Cedula <input  [(ngModel)]="paciente.cedula">
-  <br>
-  Tipo <input  [(ngModel)]="paciente.tipoPersona">
-  <br>
-  Fecha de Nacimiento <input  [(ngModel)]="paciente.fechaNacimiento">
-  <br><br/><br/>
-  <button  (click)="guardar()">Guardar</button>
-  <br/>
-  {{mensaje}}
+<div class="col-md-5">
+  <div class="card-body">
+    <div class="container">
+      Nombre <input  [(ngModel)]="paciente.nombre">
+      <br><br/>
+      Apellido <input  [(ngModel)]="paciente.apellido">
+      <br><br/>
+      E-mail <input  [(ngModel)]="paciente.email">
+      <br><br/>
+      Telefono <input  [(ngModel)]="paciente.telefono">
+      <br><br/>
+      RUC <input  [(ngModel)]="paciente.ruc">
+      <br><br/>
+      Cedula <input  [(ngModel)]="paciente.cedula">
+      <br><br/>
+      Tipo <input  [(ngModel)]="paciente.tipoPersona">
+      <br><br/>
+      Fecha de Nacimiento <input type="date"  [(ngModel)]="paciente.fechaNacimiento">
+      <br><br/><br/>
+      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+      <br/>
+    </div>
+    {{mensaje}}
+  </div>
 </div>

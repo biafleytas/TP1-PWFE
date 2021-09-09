@@ -12,10 +12,20 @@ export class CategoriaModificarComponent implements OnInit {
 
   categoria: Categoria = new Categoria();
   mensaje: string = "";
-  constructor(private servicioCategoria: ServicecategoriaService) { }
+  sub: any;
+  id: any;
 
-  ngOnInit(): void {
-  }
+  constructor(private servicioCategoria: ServicecategoriaService, private _Activatedroute: ActivatedRoute) { }
+
+  ngOnInit() {
+
+    this.sub=this._Activatedroute.paramMap.subscribe(params => {
+      console.log(params);
+      this.id = params.get('id');
+      this.servicioCategoria.getCategorias().subscribe(categorias => {
+        this.categoria = categorias.lista.find((item: Categoria) => item.idCategoria == this.id) || new Categoria();
+      });
+    })};
 
   guardar(): void{
     this.servicioCategoria.modificarCategoria(this.categoria).subscribe(

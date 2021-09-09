@@ -7,8 +7,8 @@
 <div class="col-md-5">
   <div class="card-body">
     <div class="container">
-      <p>Id <input type="text" value="{{this.categoria}}" [(ngModel)]="categoria.idCategoria"></p>
-      <p>Descripcion <input type="text" value="{{categoria.descripcion}}" [(ngModel)]="categoria.descripcion"></p>
+      <p>Id <input type="text" disabled [(ngModel)]="categoria.idCategoria"></p>
+      <p>Descripcion <input type="text"  [(ngModel)]="categoria.descripcion"></p>
       <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
       <br/>
     </div>

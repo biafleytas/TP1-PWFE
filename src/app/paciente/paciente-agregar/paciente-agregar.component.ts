@@ -17,6 +17,7 @@ export class PacienteAgregarComponent implements OnInit {
   }
 
   guardar(): void{
+    this.paciente.fechaNacimiento = this.paciente.fechaNacimiento + ' 00:00:00';
     this.servicioPaciente.agregarPaciente(this.paciente).subscribe(
       () => {
         this.mensaje='Agregado exitosamente'

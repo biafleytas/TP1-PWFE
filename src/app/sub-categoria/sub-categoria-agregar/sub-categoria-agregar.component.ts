@@ -16,9 +16,11 @@ export class SubCategoriaAgregarComponent implements OnInit {
   constructor(private servicioSubCategoria: ServicesubcategoriaService) { }
 
   ngOnInit(): void {
+    this.subcategoria.idCategoria = new Categoria();
   }
 
   guardar(): void{
+    console.log(this.subcategoria.descripcion)
     this.servicioSubCategoria.agregarSubCategoria(this.subcategoria).subscribe(
       () => {
         this.mensaje='Agregado exitosamente'

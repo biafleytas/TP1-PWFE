@@ -6,6 +6,6 @@ export class Paciente {
   email!: string;
   ruc!: string;
   cedula!: string;
-  fechaNacimiento!: Date;
+  fechaNacimiento!: string;
   tipoPersona!: string;
 }
