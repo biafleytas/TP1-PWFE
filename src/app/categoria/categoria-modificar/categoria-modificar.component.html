@@ -1,0 +1,17 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p>categoria-modificar works!</p>
+
+<div class="col-md-5">
+  <div class="card-body">
+    <div class="container">
+      <p>Id <input type="text" value="{{this.categoria}}" [(ngModel)]="categoria.idCategoria"></p>
+      <p>Descripcion <input type="text" value="{{categoria.descripcion}}" [(ngModel)]="categoria.descripcion"></p>
+      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+      <br/>
+    </div>
+    {{mensaje}}
+  </div>
+</div>
