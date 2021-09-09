@@ -1,0 +1,23 @@
+<p>paciente-agregar works!</p>
+
+<div>
+  Nombre <input  [(ngModel)]="paciente.nombre">
+  <br>
+  Apellido <input  [(ngModel)]="paciente.apellido">
+  <br>
+  E-mail <input  [(ngModel)]="paciente.email">
+  <br>
+  Telefono <input  [(ngModel)]="paciente.telefono">
+  <br>
+  RUC <input  [(ngModel)]="paciente.ruc">
+  <br>
+  Cedula <input  [(ngModel)]="paciente.cedula">
+  <br>
+  Tipo <input  [(ngModel)]="paciente.tipoPersona">
+  <br>
+  Fecha de Nacimiento <input  [(ngModel)]="paciente.fechaNacimiento">
+  <br><br/><br/>
+  <button  (click)="guardar()">Guardar</button>
+  <br/>
+  {{mensaje}}
+</div>

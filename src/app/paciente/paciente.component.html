@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p>paciente works!</p>
+
+<div *ngIf="pacientes.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Telefono</th>
+          <th>e-mail</th>
+          <th>RUC</th>
+          <th>Cedula</th>
+          <th>Tipo</th>
+          <th>Fecha de nacimiento</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of pacientes">
+          <td>{{p.idPersona}}</td>
+          <td>{{p.nombre}}</td>
+          <td>{{p.apellido}}</td>
+          <td>{{p.telefono}}</td>
+          <td>{{p.email}}</td>
+          <td>{{p.ruc}}</td>
+          <td>{{p.cedula}}</td>
+          <td>{{p.tipoPersona}}</td>
+          <td>{{p.fechaNacimiento}}</td>
+          <td><a routerLink="/modificarcategoria" class="btn btn-primary">Editar</a></td>
+          <td><button (click)="deleteItem(p.idPersona)" class="btn btn-primary">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

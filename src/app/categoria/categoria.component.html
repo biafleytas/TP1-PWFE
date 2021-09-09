@@ -1,0 +1,27 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p>categoria works!</p>
+<div *ngIf="categorias.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover">
+      <thead class="thead-dark text-center">
+        <tr>
+          <th>Id</th>
+          <th>Descripcion</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of categorias">
+          <td>{{p.idCategoria}}</td>
+          <td>{{p.descripcion}}</td>
+          <td><a routerLink="/modificarcategoria/{{p.idCategoria}}" class="btn btn-primary">Editar</a></td>
+          <td><button (click)="deleteItem(p.idCategoria)" class="btn btn-primary">Eliminar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

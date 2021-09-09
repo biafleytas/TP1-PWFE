@@ -1,0 +1,17 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p>categoria-agregar works!</p>
+
+<div class="col-md-5">
+  <div class="card-body">
+    <div class="container">
+      Descripcion <input  [(ngModel)]="categoria.descripcion">
+      <br><br>
+      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+      <br/>
+      {{mensaje}}
+    </div>
+  </div>
+</div>
