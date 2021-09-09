@@ -1,0 +1,30 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p>sub-categoria works!</p>
+
+<div *ngIf="subCategorias.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover table-center">
+      <thead class="thead-dark text-center">
+        <tr>
+          <td>Id</td>
+          <td>Descripcion</td>
+          <td>Categoria</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of subCategorias">
+          <td>{{p.idTipoProducto}}</td>
+          <td>{{p.descripcion}}</td>
+          <td>{{p.idCategoria.descripcion}}</td>
+          <td><a routerLink="/editar" class="btn btn-primary">Editar</a></td>
+          <td><button (click)="deleteItem(p.idTipoProducto)" class="btn btn-primary">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
