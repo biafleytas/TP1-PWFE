@@ -7,12 +7,10 @@
 <div class="col-md-5">
   <div class="card-body">
     <div class="container">
-      Descripcion <input  [(ngModel)]="subcategoria.descripcion">
-      <br>
-      Categoria <input  [(ngModel)]="subcategoria.idCategoria.idCategoria">
-      <br>
+      <p>Descripcion <input  [(ngModel)]="subcategoria.descripcion"></p>
+      <p>Categoria <input  [(ngModel)]="subcategoria.idCategoria.idCategoria"></p>
       <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
-      <br/>
+      <br/><br/><br/>
     </div>
     {{mensaje}}
   </div>

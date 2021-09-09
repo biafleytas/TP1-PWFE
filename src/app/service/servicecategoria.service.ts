@@ -36,6 +36,5 @@ export class ServicecategoriaService {
   modificarCategoria(p:Categoria): Observable<void> {
     return this.http
       .put<void>(this.api, p);
-
   }
 }

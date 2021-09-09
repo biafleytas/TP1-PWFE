@@ -21,7 +21,7 @@
           <td>{{p.idTipoProducto}}</td>
           <td>{{p.descripcion}}</td>
           <td>{{p.idCategoria.descripcion}}</td>
-          <td><a routerLink="/editar" class="btn btn-primary">Editar</a></td>
+          <td><a routerLink="/modificarsubcategoria/{{p.idTipoProducto}}" class="btn btn-primary">Editar</a></td>
           <td><button (click)="deleteItem(p.idTipoProducto)" class="btn btn-primary">Delete</button></td>
         </tr>
       </tbody>

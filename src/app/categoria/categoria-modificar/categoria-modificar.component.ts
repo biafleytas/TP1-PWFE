@@ -19,7 +19,7 @@ export class CategoriaModificarComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sub=this._Activatedroute.paramMap.subscribe(params => {
+    this.sub = this._Activatedroute.paramMap.subscribe(params => {
       console.log(params);
       this.id = params.get('id');
       this.servicioCategoria.getCategorias().subscribe(categorias => {

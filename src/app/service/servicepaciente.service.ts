@@ -33,4 +33,9 @@ export class ServicepacienteService {
   deletePaciente(id: number){
     return this.http.delete(this.api+'/'+id);
   }
+
+  modificarPaciente(p:Paciente): Observable<void> {
+    return this.http
+      .put<void>(this.api, p);
+  }
 }

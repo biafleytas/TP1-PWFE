@@ -7,6 +7,8 @@ import {SubCategoriaAgregarComponent} from "./sub-categoria/sub-categoria-agrega
 import {PacienteComponent} from "./paciente/paciente.component";
 import {PacienteAgregarComponent} from "./paciente/paciente-agregar/paciente-agregar.component";
 import {CategoriaModificarComponent} from "./categoria/categoria-modificar/categoria-modificar.component";
+import {PacienteModificarComponent} from "./paciente/paciente-modificar/paciente-modificar.component";
+import {SubCategoriaModificarComponent} from "./sub-categoria/sub-categoria-modificar/sub-categoria-modificar.component";
 
 const routes: Routes = [
   {
@@ -30,12 +32,20 @@ const routes: Routes = [
     component: SubCategoriaAgregarComponent
   },
   {
+    path:'modificarsubcategoria/:id',
+    component:SubCategoriaModificarComponent
+  },
+  {
     path:'paciente',
     component:PacienteComponent
   },
   {
     path:'nuevopaciente',
     component:PacienteAgregarComponent
+  },
+  {
+    path:'modificarpaciente/:id',
+    component:PacienteModificarComponent
   }
 
 ];

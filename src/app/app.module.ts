@@ -15,6 +15,8 @@ import { PacienteComponent } from './paciente/paciente.component';
 import {ServicepacienteService} from "./service/servicepaciente.service";
 import { PacienteAgregarComponent } from './paciente/paciente-agregar/paciente-agregar.component';
 import { CategoriaModificarComponent } from './categoria/categoria-modificar/categoria-modificar.component';
+import { SubCategoriaModificarComponent } from './sub-categoria/sub-categoria-modificar/sub-categoria-modificar.component';
+import { PacienteModificarComponent } from './paciente/paciente-modificar/paciente-modificar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CategoriaModificarComponent } from './categoria/categoria-modificar/cat
     SubCategoriaAgregarComponent,
     PacienteComponent,
     PacienteAgregarComponent,
-    CategoriaModificarComponent
+    CategoriaModificarComponent,
+    SubCategoriaModificarComponent,
+    PacienteModificarComponent
   ],
   imports: [
     BrowserModule,

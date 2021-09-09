@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {listadatos} from "../model/datos";
-import {Categoria} from "../model/categoria";
 import {SubCategoria} from "../model/sub-categoria";
 import {tap} from "rxjs/operators";
 
@@ -33,5 +32,10 @@ export class ServicesubcategoriaService {
 
   deleteSubCategoria(id: number){
     return this.http.delete(this.api+'/'+id);
+  }
+
+  modificarSubCategoria(p:SubCategoria): Observable<void> {
+    return this.http
+      .put<void>(this.api, p);
   }
 }

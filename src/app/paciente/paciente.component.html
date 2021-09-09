@@ -33,7 +33,7 @@
           <td>{{p.cedula}}</td>
           <td>{{p.tipoPersona}}</td>
           <td>{{p.fechaNacimiento}}</td>
-          <td><a routerLink="/modificarcategoria" class="btn btn-primary">Editar</a></td>
+          <td><a routerLink="/modificarpaciente/{{p.idPersona}}" class="btn btn-primary">Editar</a></td>
           <td><button (click)="deleteItem(p.idPersona)" class="btn btn-primary">Eliminar</button></td>
         </tr>
       </tbody>
