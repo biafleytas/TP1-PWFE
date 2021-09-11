@@ -1,0 +1,31 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p></p>
+
+<div class="col-md-5">
+  <div class="card-body">
+    <div class="container">
+      <p>Id <input type="text" disabled [(ngModel)]="agenda.idPersonaHorarioAgenda"></p>
+      <p>Dia
+        <select name="dia" [(ngModel)]="agenda.dia">
+          <option value="0" selected>Domingo</option>
+          <option value="1">Lunes</option>
+          <option value="2">Martes</option>
+          <option value="3">Miercoles</option>
+          <option value="4">Jueves</option>
+          <option value="5">Viernes</option>
+          <option value="6">Sabado</option>
+        </select>
+      </p>
+      <p>Hora Apertura <input  [(ngModel)]="agenda.horaAperturaCadena"></p>
+      <p>Hora Cierre <input  [(ngModel)]="agenda.horaCierreCadena"></p>
+      <p>Intervalo <input  [(ngModel)]="agenda.intervaloMinutos"></p>
+      <p>Empleado <input  [(ngModel)]="agenda.idEmpleado.idPersona"></p>
+      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+      <br/><br/><br/>
+    </div>
+    {{mensaje}}
+  </div>
+</div>

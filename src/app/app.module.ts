@@ -17,6 +17,10 @@ import { PacienteAgregarComponent } from './paciente/paciente-agregar/paciente-a
 import { CategoriaModificarComponent } from './categoria/categoria-modificar/categoria-modificar.component';
 import { SubCategoriaModificarComponent } from './sub-categoria/sub-categoria-modificar/sub-categoria-modificar.component';
 import { PacienteModificarComponent } from './paciente/paciente-modificar/paciente-modificar.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import {ServiceagendaService} from "./service/serviceagenda.service";
+import { AgendaAgregarComponent } from './agenda/agenda-agregar/agenda-agregar.component';
+import { AgendaModificarComponent } from './agenda/agenda-modificar/agenda-modificar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { PacienteModificarComponent } from './paciente/paciente-modificar/pacien
     PacienteAgregarComponent,
     CategoriaModificarComponent,
     SubCategoriaModificarComponent,
-    PacienteModificarComponent
+    PacienteModificarComponent,
+    AgendaComponent,
+    AgendaAgregarComponent,
+    AgendaModificarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,8 @@ import { PacienteModificarComponent } from './paciente/paciente-modificar/pacien
   providers: [
     ServicecategoriaService,
     ServicesubcategoriaService,
-    ServicepacienteService
+    ServicepacienteService,
+    ServiceagendaService
   ],
   bootstrap: [AppComponent]
 })

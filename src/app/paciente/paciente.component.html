@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
 </head>
 
-<p>paciente works!</p>
+<p></p>
 
 <div *ngIf="pacientes.length>0">
   <div class="container">
@@ -11,9 +11,7 @@
         <tr>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Apellido</th>
           <th>Telefono</th>
-          <th>e-mail</th>
           <th>RUC</th>
           <th>Cedula</th>
           <th>Tipo</th>
@@ -25,10 +23,8 @@
       <tbody>
         <tr *ngFor="let p of pacientes">
           <td>{{p.idPersona}}</td>
-          <td>{{p.nombre}}</td>
-          <td>{{p.apellido}}</td>
+          <td>{{p.nombre + " " + p.apellido}}</td>
           <td>{{p.telefono}}</td>
-          <td>{{p.email}}</td>
           <td>{{p.ruc}}</td>
           <td>{{p.cedula}}</td>
           <td>{{p.tipoPersona}}</td>

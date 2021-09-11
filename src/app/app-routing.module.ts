@@ -9,6 +9,9 @@ import {PacienteAgregarComponent} from "./paciente/paciente-agregar/paciente-agr
 import {CategoriaModificarComponent} from "./categoria/categoria-modificar/categoria-modificar.component";
 import {PacienteModificarComponent} from "./paciente/paciente-modificar/paciente-modificar.component";
 import {SubCategoriaModificarComponent} from "./sub-categoria/sub-categoria-modificar/sub-categoria-modificar.component";
+import {AgendaComponent} from "./agenda/agenda.component";
+import {AgendaAgregarComponent} from "./agenda/agenda-agregar/agenda-agregar.component";
+import {AgendaModificarComponent} from "./agenda/agenda-modificar/agenda-modificar.component";
 
 const routes: Routes = [
   {
@@ -46,6 +49,18 @@ const routes: Routes = [
   {
     path:'modificarpaciente/:id',
     component:PacienteModificarComponent
+  },
+  {
+    path:'agenda',
+    component:AgendaComponent
+  },
+  {
+    path:'nuevaagenda',
+    component:AgendaAgregarComponent
+  },
+  {
+    path:'modificaragenda/:id',
+    component:AgendaModificarComponent
   }
 
 ];

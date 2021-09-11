@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+</head>
+
+<p></p>
+
+<div *ngIf="agendas.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Dia</th>
+        <th>Hora Apertura</th>
+        <th>Hora Cierre</th>
+        <th>Intervalo</th>
+        <th>Empleado</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of agendas">
+        <td>{{p.idPersonaHorarioAgenda}}</td>
+        <td>{{p.dia}}</td>
+        <td>{{p.horaAperturaCadena}}</td>
+        <td>{{p.horaCierreCadena}}</td>
+        <td>{{p.intervaloMinutos}}</td>
+        <td>{{p.idEmpleado.nombre}}</td>
+        <td><a routerLink="/modificaragenda/{{p.idPersonaHorarioAgenda}}" class="btn btn-primary">Editar</a></td>
+        <td><button (click)="deleteItem(p.idPersonaHorarioAgenda)" class="btn btn-primary">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
