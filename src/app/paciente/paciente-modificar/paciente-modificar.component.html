@@ -1,25 +1,30 @@
-<head>
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-</head>
-
-<p></p>
-
-<div class="col-md-5">
-  <div class="card-body">
-    <div class="container">
-      <p>Id <input type="text" disabled [(ngModel)]="paciente.idPersona"></p>
-      <p>Nombre <input  [(ngModel)]="paciente.nombre"></p>
-      <p>Apellido <input  [(ngModel)]="paciente.apellido"></p>
-      <p>E-mail <input  [(ngModel)]="paciente.email"></p>
-      <p>Telefono <input  [(ngModel)]="paciente.telefono"></p>
-      <p>RUC <input  [(ngModel)]="paciente.ruc"></p>
-      <p>Cedula <input  [(ngModel)]="paciente.cedula"></p>
-      <p>Tipo <input  [(ngModel)]="paciente.tipoPersona"></p>
-      <p>Fecha de Nacimiento <input type="date"  [(ngModel)]="paciente.fechaNacimiento"></p>
-      <br>
-      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
-      <br/>
-    </div>
-    {{mensaje}}
+<br/><br/>
+<div class="container col-md-5 offset-md-3 card">
+  <br><h3 class="text-center">Modificar Paciente</h3><br>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="paciente.nombre">
   </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="paciente.apellido">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese E-mail" [(ngModel)]="paciente.email">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Telefono" [(ngModel)]="paciente.telefono">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese RUC" [(ngModel)]="paciente.ruc">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Cédula" [(ngModel)]="paciente.cedula">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Tipo" [(ngModel)]="paciente.tipoPersona">
+  </div>
+  <div class="form-group">
+    <input type="date" class="form-control" placeholder="Ingrese Fecha de Nacimiento" [(ngModel)]="paciente.fechaNacimiento">
+  </div>
+  <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>
+  <br/><br/>{{mensaje}}<br/><br/>
 </div>

@@ -1,0 +1,30 @@
+<br/><h3 class="text-center card-title">Listado de Presentación Producto</h3><br/>
+<div *ngIf="presentaciones.length>0">
+  <div class="container">
+    <table border="1" class="table table-bordered table-hover">
+      <thead class="thead-dark text-center">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Id Producto</th>
+        <th>Sub Categoria</th>
+        <th>Precio Venta</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of presentaciones">
+        <td>{{p.idPresentacionProducto}}</td>
+        <td>{{p.nombre}}</td>
+        <td>{{p.idProducto.idProducto}}</td>
+        <td>{{p.idProducto.idTipoProducto.descripcion}}</td>
+        <td>{{p.existenciaProducto.precioVenta}}</td>
+        <td><a routerLink="/modificarpresentacion/{{p.idPresentacionProducto}}" class="btn btn-primary">Editar</a></td>
+        <td><button (click)="deleteItem(p.idPresentacionProducto)" class="btn btn-primary">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

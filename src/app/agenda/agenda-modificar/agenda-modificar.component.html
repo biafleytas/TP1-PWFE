@@ -1,31 +1,33 @@
-<head>
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-</head>
-
-<p></p>
-
-<div class="col-md-5">
-  <div class="card-body">
-    <div class="container">
-      <p>Id <input type="text" disabled [(ngModel)]="agenda.idPersonaHorarioAgenda"></p>
-      <p>Dia
-        <select name="dia" [(ngModel)]="agenda.dia">
-          <option value="0" selected>Domingo</option>
-          <option value="1">Lunes</option>
-          <option value="2">Martes</option>
-          <option value="3">Miercoles</option>
-          <option value="4">Jueves</option>
-          <option value="5">Viernes</option>
-          <option value="6">Sabado</option>
-        </select>
-      </p>
-      <p>Hora Apertura <input  [(ngModel)]="agenda.horaAperturaCadena"></p>
-      <p>Hora Cierre <input  [(ngModel)]="agenda.horaCierreCadena"></p>
-      <p>Intervalo <input  [(ngModel)]="agenda.intervaloMinutos"></p>
-      <p>Empleado <input  [(ngModel)]="agenda.idEmpleado.idPersona"></p>
-      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
-      <br/><br/><br/>
-    </div>
-    {{mensaje}}
+<br/><br/>
+<div class="container col-md-5 offset-md-3 card">
+  <br/><h3 class="text-center card-title">Modificar Horario Agenda</h3><br/>
+  <div class="form-group">
+    <p>Dia
+      <select name="dia" [(ngModel)]="agenda.dia">
+        <option value="0" selected>Domingo</option>
+        <option value="1">Lunes</option>
+        <option value="2">Martes</option>
+        <option value="3">Miercoles</option>
+        <option value="4">Jueves</option>
+        <option value="5">Viernes</option>
+        <option value="6">Sabado</option>
+      </select>
+    </p>
   </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Hora Apertura" [(ngModel)]="agenda.horaAperturaCadena">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Hora Cierre" [(ngModel)]="agenda.horaCierreCadena">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Intervalo" [(ngModel)]="agenda.intervaloMinutos">
+  </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese Empleado" [(ngModel)]="agenda.idEmpleado.idPersona">
+  </div>
+  <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+  <br/><br/>{{mensaje}}<br/><br/>
 </div>
+
+

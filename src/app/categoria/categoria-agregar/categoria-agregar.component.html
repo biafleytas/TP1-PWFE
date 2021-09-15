@@ -1,26 +1,11 @@
-<head>
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-</head>
-
-<p></p>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-5 offset-md-3 card">
-      <br>
-      <h3 class="text-center">Registro de Categorias</h3>
-      <br>
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label>Descripcion</label>
-            <input class="form-control" autofocus [(ngModel)]="categoria.descripcion" [ngModelOptions]="{standalone: true}">
-          </div>
-        </form>
-        <br>
-        <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>
-      </div>
-      {{mensaje}}
-    </div>
+<br/><br/>
+<div class="container col-md-5 offset-md-3 card">
+  <br><h3 class="text-center">Registro de Categorias</h3><br>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese descripcion" [(ngModel)]="categoria.descripcion" [ngModelOptions]="{standalone: true}">
   </div>
+  <br>
+  <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>
+  <br/><br/>{{mensaje}}<br/><br/>
 </div>
+

@@ -12,6 +12,9 @@ import {SubCategoriaModificarComponent} from "./sub-categoria/sub-categoria-modi
 import {AgendaComponent} from "./agenda/agenda.component";
 import {AgendaAgregarComponent} from "./agenda/agenda-agregar/agenda-agregar.component";
 import {AgendaModificarComponent} from "./agenda/agenda-modificar/agenda-modificar.component";
+import {PresentacionComponent} from "./presentacion/presentacion.component";
+import {PresentacionAgregarComponent} from "./presentacion/presentacion-agregar/presentacion-agregar.component";
+import {PresentacionModificarComponent} from "./presentacion/presentacion-modificar/presentacion-modificar.component";
 
 const routes: Routes = [
   {
@@ -61,6 +64,18 @@ const routes: Routes = [
   {
     path:'modificaragenda/:id',
     component:AgendaModificarComponent
+  },
+  {
+    path:'presentacion',
+    component:PresentacionComponent
+  },
+  {
+    path:'nuevapresentacion',
+    component:PresentacionAgregarComponent
+  },
+  {
+    path:'modificarpresentacion/:id',
+    component:PresentacionModificarComponent
   }
 
 ];

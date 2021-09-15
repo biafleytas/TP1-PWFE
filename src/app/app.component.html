@@ -1,7 +1,9 @@
+<!doctype html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <style>
@@ -21,21 +23,28 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categoria</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categoría</a>
         <div class="dropdown-menu dropdown-content">
-          <a class="dropdown-item" routerLink="/categoria">Lista de Categorias</a>
-          <a class="dropdown-item" routerLink="/nuevacategoria">Agregar Categoria</a>
+          <a class="dropdown-item" routerLink="/categoria">Lista de Categorías</a>
+          <a class="dropdown-item" routerLink="/nuevacategoria">Agregar Categoría</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sub-Categoria</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sub-Categoría</a>
         <div class="dropdown-menu dropdown-content">
-          <a routerLink="/sub-categoria" class="dropdown-item">Lista de sub categorias</a>
-          <a routerLink="/nuevasub-categoria" class="dropdown-item">Agregar sub Categoria</a>
+          <a routerLink="/sub-categoria" class="dropdown-item">Lista de sub categorías</a>
+          <a routerLink="/nuevasub-categoria" class="dropdown-item">Agregar sub Categoría</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pacientes</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Presentación</a>
+        <div class="dropdown-menu dropdown-content">
+          <a routerLink="/presentacion" class="dropdown-item">Lista de presentaciones</a>
+          <a routerLink="/nuevapresentacion" class="dropdown-item">Agregar presentación</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Paciente</a>
         <div class="dropdown-menu dropdown-content">
           <a routerLink="/paciente" class="dropdown-item">Lista de pacientes</a>
           <a routerLink="/nuevopaciente" class="dropdown-item">Agregar paciente</a>
@@ -60,9 +69,12 @@
 
 
 <div style="text-align:center">
-
   <div>
     <router-outlet></router-outlet>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </body>
+</html>

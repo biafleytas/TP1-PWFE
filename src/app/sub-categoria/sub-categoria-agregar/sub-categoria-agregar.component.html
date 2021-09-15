@@ -1,17 +1,15 @@
-<head>
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
-</head>
-
-<p></p>
-
-<div class="col-md-5">
-  <div class="card-body">
-    <div class="container">
-      <p>Descripcion <input  [(ngModel)]="subcategoria.descripcion"></p>
-      <p>Categoria <input  [(ngModel)]="subcategoria.idCategoria.idCategoria"></p>
-      <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
-      <br/><br/><br/>
-    </div>
-    {{mensaje}}
+<br/><br/>
+<div class="container col-md-5 offset-md-3 card">
+  <br/><h3 class="text-center card-title">Registro de Subcategorías</h3><br/>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese descripcion" [(ngModel)]="subcategoria.descripcion">
   </div>
+  <div class="form-group">
+    <input class="form-control" placeholder="Ingrese categoria" [(ngModel)]="subcategoria.idCategoria.idCategoria">
+  </div>
+  <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
+  <br/><br/>{{mensaje}}<br/><br/>
 </div>
+
+
+
