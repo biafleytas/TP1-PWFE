@@ -8,4 +8,5 @@ export class Paciente {
   cedula!: string;
   fechaNacimiento!: string;
   tipoPersona!: string;
+  usuarioLogin!:string;
 }

@@ -20,7 +20,7 @@ export class SubCategoriaModificarComponent implements OnInit {
   constructor(private servicioSubCategoria: ServicesubcategoriaService, private _Activatedroute: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.subcategoria.idCategoria = new Categoria();
     this.sub=this._Activatedroute.paramMap.subscribe(params => {
       console.log(params);
       this.id = params.get('id');

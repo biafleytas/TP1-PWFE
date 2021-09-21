@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Presentacion} from "../../model/presentacion";
 import {ServicepresentacionService} from "../../service/servicepresentacion.service";
+import {Producto} from "../../model/producto";
+import {Existencia} from "../../model/existencia";
 
 @Component({
   selector: 'app-presentacion-modificar',
@@ -19,6 +21,8 @@ export class PresentacionModificarComponent implements OnInit {
   constructor(private servicioPresentacion: ServicepresentacionService, private _Activatedroute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.presentacion.idProducto = new Producto();
+    this.presentacion.existenciaProducto = new Existencia();
     this.sub=this._Activatedroute.paramMap.subscribe(params => {
       this.id = params.get('id');
       this.servicioPresentacion.getPresentaciones().subscribe(presentaciones => {

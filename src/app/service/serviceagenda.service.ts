@@ -19,7 +19,7 @@ export class ServiceagendaService {
   }
 
   agregarAgenda(p:Agenda): Observable<Agenda> {
-    const headers = new HttpHeaders().set('usuario','usuario2');
+    const headers = new HttpHeaders().set('usuario', localStorage.getItem("usuario") || "");
     return this.http
       .post<Agenda>(this.api, p, { 'headers': headers })
       .pipe(
@@ -36,7 +36,7 @@ export class ServiceagendaService {
   }
 
   modificarAgenda(p:Agenda): Observable<void> {
-    const headers = new HttpHeaders().set('usuario','usuario2');
+    const headers = new HttpHeaders().set('usuario', localStorage.getItem("usuario") || "");
     return this.http
       .put<void>(this.api, p, { 'headers': headers });
   }

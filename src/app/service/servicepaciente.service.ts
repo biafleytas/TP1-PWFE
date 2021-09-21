@@ -18,6 +18,10 @@ export class ServicepacienteService {
     return this.http.get<listadatos<Paciente>>(this.api);
   }
 
+  getUsuariosDelSistema(): Observable<listadatos<Paciente>> {
+    return this.http.get<listadatos<Paciente>>(this.api+'?ejemplo=%7B%22soloUsuariosDelSistema%22%3Atrue%7D');
+  }
+
   agregarPaciente(p:Paciente): Observable<Paciente> {
     return this.http
       .post<Paciente>(this.api, p)
