@@ -9,6 +9,8 @@ import {ServiceagendaService} from "../service/serviceagenda.service";
 })
 export class AgendaComponent implements OnInit {
   agendas: Agenda[] = [];
+  empleado: string = "";
+  dia: string = "";
   paginas: number[] = [];
 
   constructor(private servicioAgenda: ServiceagendaService) { }
@@ -32,6 +34,13 @@ export class AgendaComponent implements OnInit {
         let numeroPaginas: number = Math.ceil(entity.totalDatos / 4);
         this.paginas = Array.from(Array(numeroPaginas).keys());
       },
+      error =>console.log('no se pudieron conseguir las agendas')
+    );
+  }
+
+  buscar(): void{
+    this.servicioAgenda.getAgendasFiltradas(this.empleado, this.dia).subscribe(
+      entity => this.agendas = entity.lista,
       error =>console.log('no se pudieron conseguir las agendas')
     );
   }

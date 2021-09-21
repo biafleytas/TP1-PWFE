@@ -19,6 +19,12 @@ export class ServiceagendaService {
     return this.http.get<listadatos<Agenda>>(this.api);
   }
 
+  getAgendasFiltradas(empleado: string, dia: string): Observable<listadatos<Agenda>> {
+    let ejemplo: any = {dia: dia, idEmpleado:{idPersona: empleado}};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<Agenda>>(this.api+'?ejemplo='+ejemplo1);
+  }
+
   getAgendasPaginadas(inicio: number): Observable<listadatos<Agenda>> {
     return this.http.get<listadatos<Agenda>>(this.api+'?inicio='+inicio.toString()+'&cantidad=4');
   }
