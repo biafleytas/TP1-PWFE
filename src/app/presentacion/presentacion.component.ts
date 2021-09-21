@@ -9,6 +9,8 @@ import {ServicepresentacionService} from "../service/servicepresentacion.service
 })
 export class PresentacionComponent implements OnInit {
   presentaciones: Presentacion[] = [];
+  nombre: string = "";
+  subcategoria: string = "";
 
   constructor(private servicioPresentacion: ServicepresentacionService) { }
 
@@ -25,6 +27,20 @@ export class PresentacionComponent implements OnInit {
       .subscribe(response => {
         this.presentaciones = this.presentaciones.filter(item => item.idPresentacionProducto !== p);
       })
+  }
+
+  buscarNombre(): void{
+    this.servicioPresentacion.getPresentacionNombre(this.nombre).subscribe(
+      entity => this.presentaciones = entity.lista,
+      error =>console.log('no se pudieron conseguir las presentaciones')
+    );
+  }
+
+  buscarSubCategoria(): void{
+    this.servicioPresentacion.getPresentacionSubCategoria(this.subcategoria).subscribe(
+      entity => this.presentaciones = entity.lista,
+      error =>console.log('no se pudieron conseguir las sub-categorias')
+    );
   }
 
 }

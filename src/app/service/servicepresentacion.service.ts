@@ -20,6 +20,18 @@ export class ServicepresentacionService {
     return this.http.get<listadatos<Presentacion>>(this.api);
   }
 
+  getPresentacionNombre(nombre: string): Observable<listadatos<Presentacion>> {
+    let ejemplo: any = {nombre: nombre};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<Presentacion>>(this.api+'?like=S&ejemplo='+ejemplo1);
+  }
+
+  getPresentacionSubCategoria(subcategoria: string): Observable<listadatos<Presentacion>> {
+    let ejemplo: any = {idProducto: {idTipoProducto: {idTipoProducto: subcategoria}}};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<Presentacion>>(this.api+'?ejemplo='+ejemplo1);
+  }
+
   agregarPresentacion(p: Presentacion): Observable<Presentacion> {
     return this.http
       .post<Presentacion>(this.api, p)
