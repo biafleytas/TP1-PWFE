@@ -3,11 +3,6 @@
 <head>
   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
 </head>
-<style>
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-</style>
 
 <body>
 <div *ngIf="login==true">
@@ -34,40 +29,20 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categoría</a>
-          <div class="dropdown-menu dropdown-content">
-            <a class="dropdown-item" routerLink="/categoria">Lista de Categorías</a>
-            <a class="dropdown-item" routerLink="/nuevacategoria">Agregar Categoría</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="dropdown" routerLink="/categoria" role="button" aria-haspopup="true" aria-expanded="false">Categoría</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sub-Categoría</a>
-          <div class="dropdown-menu dropdown-content">
-            <a routerLink="/sub-categoria" class="dropdown-item">Lista de sub categorías</a>
-            <a routerLink="/nuevasub-categoria" class="dropdown-item">Agregar sub Categoría</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="dropdown" routerLink="/sub-categoria" role="button" aria-haspopup="true" aria-expanded="false">Sub-Categoría</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Presentación</a>
-          <div class="dropdown-menu dropdown-content">
-            <a routerLink="/presentacion" class="dropdown-item">Lista de presentaciones</a>
-            <a routerLink="/nuevapresentacion" class="dropdown-item">Agregar presentación</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="dropdown" routerLink="/presentacion" role="button" aria-haspopup="true" aria-expanded="false">Presentación</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Paciente</a>
-          <div class="dropdown-menu dropdown-content">
-            <a routerLink="/paciente" class="dropdown-item">Lista de pacientes</a>
-            <a routerLink="/nuevopaciente" class="dropdown-item">Agregar paciente</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="dropdown" routerLink="/paciente" role="button" aria-haspopup="true" aria-expanded="false">Paciente</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agenda</a>
-          <div class="dropdown-menu dropdown-content">
-            <a routerLink="/agenda" class="dropdown-item">Lista de agendas</a>
-            <a routerLink="/nuevaagenda" class="dropdown-item">Agregar agenda</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="dropdown" routerLink="/agenda" role="button" aria-haspopup="true" aria-expanded="false">Agenda</a>
         </li>
       </ul>
     </div>
