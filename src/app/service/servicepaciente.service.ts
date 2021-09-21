@@ -22,6 +22,22 @@ export class ServicepacienteService {
     return this.http.get<listadatos<Paciente>>(this.api+'?ejemplo=%7B%22soloUsuariosDelSistema%22%3Atrue%7D');
   }
 
+  getPacienteNombre(nombre: string): Observable<listadatos<Paciente>> {
+    let ejemplo: any = {nombre: nombre};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<Paciente>>(this.api+'?like=S&ejemplo='+ejemplo1);
+  }
+
+  getPacienteApellido(nombre: string): Observable<listadatos<Paciente>> {
+    let ejemplo: any = {nombre: nombre};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<Paciente>>(this.api+'?like=S&ejemplo='+ejemplo1);
+  }
+
+  getPacientesPaginadas(inicio: number): Observable<listadatos<Paciente>> {
+    return this.http.get<listadatos<Paciente>>(this.api+'?inicio='+inicio.toString()+'&cantidad=4');
+  }
+
   agregarPaciente(p:Paciente): Observable<Paciente> {
     return this.http
       .post<Paciente>(this.api, p)

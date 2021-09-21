@@ -5,6 +5,7 @@ import {listadatos} from "../model/datos";
 import {SubCategoria} from "../model/sub-categoria";
 import {tap} from "rxjs/operators";
 import {Presentacion} from "../model/presentacion";
+import {Paciente} from "../model/paciente";
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class ServicepresentacionService {
     let ejemplo: any = {idProducto: {idTipoProducto: {idTipoProducto: subcategoria}}};
     let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
     return this.http.get<listadatos<Presentacion>>(this.api+'?ejemplo='+ejemplo1);
+  }
+
+  getPresentacionesPaginadas(inicio: number): Observable<listadatos<Presentacion>> {
+    return this.http.get<listadatos<Presentacion>>(this.api+'?inicio='+inicio.toString()+'&cantidad=4');
   }
 
   agregarPresentacion(p: Presentacion): Observable<Presentacion> {

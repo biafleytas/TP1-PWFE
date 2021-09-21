@@ -17,6 +17,10 @@ export class ServicecategoriaService {
     return this.http.get<listadatos<Categoria>>(this.api);
   }
 
+  getCategoriasPaginadas(inicio: number): Observable<listadatos<Categoria>> {
+    return this.http.get<listadatos<Categoria>>(this.api+'?inicio='+inicio.toString()+'&cantidad=4');
+  }
+
   agregarCategoria(p:Categoria): Observable<Categoria> {
     return this.http
       .post<Categoria>(this.api, p)

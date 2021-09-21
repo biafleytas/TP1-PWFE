@@ -9,15 +9,12 @@ import {ServiceagendaService} from "../service/serviceagenda.service";
 })
 export class AgendaComponent implements OnInit {
   agendas: Agenda[] = [];
+  paginas: number[] = [];
 
   constructor(private servicioAgenda: ServiceagendaService) { }
 
   ngOnInit(): void {
-    this.servicioAgenda.getAgendas().subscribe(
-      entity => this.agendas = entity.lista,
-      error =>console.log('no se pudieron conseguir las agendas')
-    );
-
+    this.traerItems(0);
   }
 
   deleteItem(p: number){
@@ -25,6 +22,18 @@ export class AgendaComponent implements OnInit {
       .subscribe(response => {
         this.agendas = this.agendas.filter(item => item.idPersonaHorarioAgenda !== p);
       })
+  }
+
+  traerItems(numeroPagina: number){
+    let inicio: number = (numeroPagina * 4);
+    this.servicioAgenda.getAgendasPaginadas(inicio).subscribe(
+      entity => {
+        this.agendas = entity.lista;
+        let numeroPaginas: number = Math.ceil(entity.totalDatos / 4);
+        this.paginas = Array.from(Array(numeroPaginas).keys());
+      },
+      error =>console.log('no se pudieron conseguir las agendas')
+    );
   }
 
 }

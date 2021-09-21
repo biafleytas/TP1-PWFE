@@ -12,15 +12,12 @@ export class SubCategoriaComponent implements OnInit {
   subCategorias: SubCategoria[] = [];
   descripcion: string = "";
   categoria: string = "";
+  paginas: number[] = [];
 
   constructor(private servicioSubCategoria: ServicesubcategoriaService) { }
 
   ngOnInit(): void {
-    this.servicioSubCategoria.getSubCategorias().subscribe(
-      entity => this.subCategorias = entity.lista,
-      error =>console.log('no se pudieron conseguir las sub-categorias')
-    );
-
+    this.traerItems(0);
   }
 
   deleteItem(p: number){
@@ -40,6 +37,18 @@ export class SubCategoriaComponent implements OnInit {
   buscarCategoria(): void{
     this.servicioSubCategoria.getSubCategoriasCategoria(this.categoria).subscribe(
       entity => this.subCategorias = entity.lista,
+      error =>console.log('no se pudieron conseguir las sub-categorias')
+    );
+  }
+
+  traerItems(numeroPagina: number){
+    let inicio: number = (numeroPagina * 4);
+    this.servicioSubCategoria.getSubCategoriasPaginadas(inicio).subscribe(
+      entity => {
+        this.subCategorias = entity.lista;
+        let numeroPaginas: number = Math.ceil(entity.totalDatos / 4);
+        this.paginas = Array.from(Array(numeroPaginas).keys());
+      },
       error =>console.log('no se pudieron conseguir las sub-categorias')
     );
   }

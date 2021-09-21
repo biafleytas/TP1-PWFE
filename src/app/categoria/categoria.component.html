@@ -19,5 +19,13 @@
       </tr>
       </tbody>
     </table>
+
+    <div>
+      <ul class="pagination pagination-lg mx-auto">
+        <li class="page-item" *ngFor="let p of paginas">
+          <button class="page-link" (click)="traerItems(p)">{{p+1}}</button>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

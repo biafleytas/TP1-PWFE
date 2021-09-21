@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Categoria} from "../model/categoria";
 import {ServicecategoriaService} from "../service/servicecategoria.service";
+import {range} from "rxjs";
 
 @Component({
   selector: 'app-categoria',
@@ -9,14 +10,12 @@ import {ServicecategoriaService} from "../service/servicecategoria.service";
 })
 export class CategoriaComponent implements OnInit {
   categorias: Categoria[] = [];
+  paginas: number[] = [];
 
   constructor(private servicioCategoria: ServicecategoriaService) { }
 
   ngOnInit(): void {
-    this.servicioCategoria.getCategorias().subscribe(
-      entity => this.categorias = entity.lista,
-      error =>console.log('no se pudieron conseguir las categorias')
-    );
+    this.traerItems(0);
   }
 
   deleteItem(p: number){
@@ -24,6 +23,18 @@ export class CategoriaComponent implements OnInit {
       .subscribe(response => {
         this.categorias = this.categorias.filter(item => item.idCategoria !== p);
       })
+  }
+
+  traerItems(numeroPagina: number){
+    let inicio: number = (numeroPagina * 4);
+    this.servicioCategoria.getCategoriasPaginadas(inicio).subscribe(
+      entity => {
+        this.categorias = entity.lista;
+        let numeroPaginas: number = Math.ceil(entity.totalDatos / 4);
+        this.paginas = Array.from(Array(numeroPaginas).keys());
+      },
+      error =>console.log('no se pudieron conseguir las categorias')
+    );
   }
 
 }

@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {listadatos} from "../model/datos";
 import {tap} from "rxjs/operators";
 import {Agenda} from "../model/agenda";
+import {Paciente} from "../model/paciente";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class ServiceagendaService {
 
   getAgendas(): Observable<listadatos<Agenda>> {
     return this.http.get<listadatos<Agenda>>(this.api);
+  }
+
+  getAgendasPaginadas(inicio: number): Observable<listadatos<Agenda>> {
+    return this.http.get<listadatos<Agenda>>(this.api+'?inicio='+inicio.toString()+'&cantidad=4');
   }
 
   agregarAgenda(p:Agenda): Observable<Agenda> {

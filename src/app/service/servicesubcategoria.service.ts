@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {listadatos} from "../model/datos";
 import {SubCategoria} from "../model/sub-categoria";
 import {tap} from "rxjs/operators";
+import {Paciente} from "../model/paciente";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ export class ServicesubcategoriaService {
     let ejemplo: any = {idCategoria: {idCategoria: categoria}};
     let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
     return this.http.get<listadatos<SubCategoria>>(this.api+'?ejemplo='+ejemplo1);
+  }
+
+  getSubCategoriasPaginadas(inicio: number): Observable<listadatos<SubCategoria>> {
+    return this.http.get<listadatos<SubCategoria>>(this.api+'?inicio='+inicio.toString()+'&cantidad=4');
   }
 
   agregarSubCategoria(p:SubCategoria): Observable<SubCategoria> {
