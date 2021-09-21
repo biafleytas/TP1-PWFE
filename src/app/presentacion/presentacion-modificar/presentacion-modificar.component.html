@@ -2,19 +2,24 @@
 <div class="container col-md-5 offset-md-3 card">
   <br><h3 class="text-center">Modificar Presentación Producto</h3><br>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Codigo" [(ngModel)]="presentacion.codigo">
+    <p class="text-left text-muted">Código:</p>
+    <input class="form-control" [(ngModel)]="presentacion.codigo">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Flag Servicio" [(ngModel)]="presentacion.flagServicio">
+    <p class="text-left text-muted">Flag Servicio:</p>
+    <input class="form-control" [(ngModel)]="presentacion.flagServicio">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Id Producto" [(ngModel)]="presentacion.idProducto.idProducto">
+    <p class="text-left text-muted">Id Producto:</p>
+    <input class="form-control" [(ngModel)]="presentacion.idProducto.idProducto">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="presentacion.nombre">
+    <p class="text-left text-muted">Nombre:</p>
+    <input class="form-control" [(ngModel)]="presentacion.nombre">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Precio" [(ngModel)]="presentacion.existenciaProducto.precioVenta">
+    <p class="text-left text-muted">Precio de Venta:</p>
+    <input class="form-control" [(ngModel)]="presentacion.existenciaProducto.precioVenta">
   </div>
   <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>
   <br/><br/>{{mensaje}}<br/><br/>

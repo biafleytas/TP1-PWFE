@@ -2,7 +2,8 @@
 <div class="container col-md-5 offset-md-3 card">
   <br><h3 class="text-center">Modificar Categoria</h3><br>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese descripcion" [(ngModel)]="categoria.descripcion" [ngModelOptions]="{standalone: true}">
+    <p class="text-left text-muted">Descripción:</p>
+    <input class="form-control" [(ngModel)]="categoria.descripcion" [ngModelOptions]="{standalone: true}">
   </div>
   <br>
   <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>

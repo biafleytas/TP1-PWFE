@@ -2,28 +2,36 @@
 <div class="container col-md-5 offset-md-3 card">
   <br><h3 class="text-center">Modificar Paciente</h3><br>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="paciente.nombre">
+    <p class="text-left text-muted">Nombre:</p>
+    <input class="form-control" [(ngModel)]="paciente.nombre">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Apellido" [(ngModel)]="paciente.apellido">
+    <p class="text-left text-muted">Apellido:</p>
+    <input class="form-control" [(ngModel)]="paciente.apellido">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese E-mail" [(ngModel)]="paciente.email">
+    <p class="text-left text-muted">E-mail:</p>
+    <input class="form-control" [(ngModel)]="paciente.email">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Telefono" [(ngModel)]="paciente.telefono">
+    <p class="text-left text-muted">Teléfono:</p>
+    <input class="form-control" [(ngModel)]="paciente.telefono">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese RUC" [(ngModel)]="paciente.ruc">
+    <p class="text-left text-muted">RUC:</p>
+    <input class="form-control" [(ngModel)]="paciente.ruc">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Cédula" [(ngModel)]="paciente.cedula">
+    <p class="text-left text-muted">Cédula:</p>
+    <input class="form-control" [(ngModel)]="paciente.cedula">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Tipo" [(ngModel)]="paciente.tipoPersona">
+    <p class="text-left text-muted">Tipo:</p>
+    <input class="form-control" [(ngModel)]="paciente.tipoPersona">
   </div>
   <div class="form-group">
-    <input type="date" class="form-control" placeholder="Ingrese Fecha de Nacimiento" [(ngModel)]="paciente.fechaNacimiento">
+    <p class="text-left text-muted">Fecha de nacimiento:</p>
+    <input type="date" class="form-control" [(ngModel)]="paciente.fechaNacimiento">
   </div>
   <button class="btn btn-primary form-control" (click)="guardar()">Guardar</button>
   <br/><br/>{{mensaje}}<br/><br/>

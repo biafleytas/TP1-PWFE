@@ -2,7 +2,7 @@
 <div class="container col-md-5 offset-md-3 card">
   <br/><h3 class="text-center card-title">Modificar Horario Agenda</h3><br/>
   <div class="form-group">
-    <p>Dia
+    <p class="text-left text-muted">Dia
       <select name="dia" [(ngModel)]="agenda.dia">
         <option value="0" selected>Domingo</option>
         <option value="1">Lunes</option>
@@ -15,16 +15,20 @@
     </p>
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Hora Apertura" [(ngModel)]="agenda.horaAperturaCadena">
+    <p class="text-left text-muted">Hora de Apertura:</p>
+    <input class="form-control" [(ngModel)]="agenda.horaAperturaCadena">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Hora Cierre" [(ngModel)]="agenda.horaCierreCadena">
+    <p class="text-left text-muted">Hora de Cierre:</p>
+    <input class="form-control" [(ngModel)]="agenda.horaCierreCadena">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Intervalo" [(ngModel)]="agenda.intervaloMinutos">
+    <p class="text-left text-muted">Intervalo:</p>
+    <input class="form-control" [(ngModel)]="agenda.intervaloMinutos">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese Empleado" [(ngModel)]="agenda.idEmpleado.idPersona">
+    <p class="text-left text-muted">Id Empleado:</p>
+    <input class="form-control" [(ngModel)]="agenda.idEmpleado.idPersona">
   </div>
   <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
   <br/><br/>{{mensaje}}<br/><br/>

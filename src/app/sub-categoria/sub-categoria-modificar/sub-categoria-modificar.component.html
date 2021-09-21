@@ -2,10 +2,12 @@
 <div class="container col-md-5 offset-md-3 card">
   <br/><h3 class="text-center card-title">Modificar Subcategoría</h3><br/>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese descripcion" [(ngModel)]="subcategoria.descripcion">
+    <p class="text-left text-muted">Descripción:</p>
+    <input class="form-control" [(ngModel)]="subcategoria.descripcion">
   </div>
   <div class="form-group">
-    <input class="form-control" placeholder="Ingrese categoria" [(ngModel)]="subcategoria.idCategoria.idCategoria">
+    <p class="text-left text-muted">Categoría:</p>
+    <input class="form-control" [(ngModel)]="subcategoria.idCategoria.idCategoria">
   </div>
   <button  (click)="guardar()" class="btn btn-primary">Guardar</button>
   <br/><br/>{{mensaje}}<br/><br/>
