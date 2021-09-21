@@ -10,6 +10,8 @@ import {ServicesubcategoriaService} from "../service/servicesubcategoria.service
 })
 export class SubCategoriaComponent implements OnInit {
   subCategorias: SubCategoria[] = [];
+  descripcion: string = "";
+  categoria: string = "";
 
   constructor(private servicioSubCategoria: ServicesubcategoriaService) { }
 
@@ -26,6 +28,20 @@ export class SubCategoriaComponent implements OnInit {
       .subscribe(response => {
         this.subCategorias = this.subCategorias.filter(item => item.idTipoProducto !== p);
       })
+  }
+
+  buscarDescripcion(): void{
+    this.servicioSubCategoria.getSubCategoriasDescripcion(this.descripcion).subscribe(
+      entity => this.subCategorias = entity.lista,
+      error =>console.log('no se pudieron conseguir las sub-categorias')
+    );
+  }
+
+  buscarCategoria(): void{
+    this.servicioSubCategoria.getSubCategoriasCategoria(this.categoria).subscribe(
+      entity => this.subCategorias = entity.lista,
+      error =>console.log('no se pudieron conseguir las sub-categorias')
+    );
   }
 
 }

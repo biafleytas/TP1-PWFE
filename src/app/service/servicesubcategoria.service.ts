@@ -18,6 +18,18 @@ export class ServicesubcategoriaService {
     return this.http.get<listadatos<SubCategoria>>(this.api);
   }
 
+  getSubCategoriasDescripcion(descripcion: string): Observable<listadatos<SubCategoria>> {
+    let ejemplo: any = {descripcion: descripcion};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<SubCategoria>>(this.api+'?like=S&ejemplo='+ejemplo1);
+  }
+
+  getSubCategoriasCategoria(categoria: string): Observable<listadatos<SubCategoria>> {
+    let ejemplo: any = {idCategoria: {idCategoria: categoria}};
+    let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
+    return this.http.get<listadatos<SubCategoria>>(this.api+'?ejemplo='+ejemplo1);
+  }
+
   agregarSubCategoria(p:SubCategoria): Observable<SubCategoria> {
     return this.http
       .post<SubCategoria>(this.api, p)
