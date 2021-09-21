@@ -30,15 +30,21 @@ export class PacienteComponent implements OnInit {
   buscarNombre(): void{
     this.servicioPaciente.getPacienteNombre(this.nombre).subscribe(
       entity => this.pacientes = entity.lista,
-      error =>console.log('no se pudieron conseguir las presentaciones')
+      error =>console.log('no se pudieron conseguir los pacientes')
     );
   }
 
   buscarApellido(): void{
     this.servicioPaciente.getPacienteApellido(this.apellido).subscribe(
       entity => this.pacientes = entity.lista,
-      error =>console.log('no se pudieron conseguir las presentaciones')
+      error =>console.log('no se pudieron conseguir los pacientes')
     );
+  }
+  buscarFisioterapeutas(): void{
+    this.servicioPaciente.getUsuariosDelSistema().subscribe(
+      entity => this.pacientes = entity.lista,
+      error =>console.log('no se pudieron conseguir los pacientes')
+    );;
   }
 
   traerItems(numeroPagina: number){

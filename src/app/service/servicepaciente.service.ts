@@ -28,8 +28,8 @@ export class ServicepacienteService {
     return this.http.get<listadatos<Paciente>>(this.api+'?like=S&ejemplo='+ejemplo1);
   }
 
-  getPacienteApellido(nombre: string): Observable<listadatos<Paciente>> {
-    let ejemplo: any = {nombre: nombre};
+  getPacienteApellido(apellido: string): Observable<listadatos<Paciente>> {
+    let ejemplo: any = {apellido: apellido};
     let ejemplo1: string = encodeURIComponent(JSON.stringify(ejemplo));
     return this.http.get<listadatos<Paciente>>(this.api+'?like=S&ejemplo='+ejemplo1);
   }
